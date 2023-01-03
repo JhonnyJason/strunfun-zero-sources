@@ -5,10 +5,8 @@ import { createLogFunctions } from "thingy-debug"
 #endregion
 
 ############################################################
-import { createClient } from "./authclientmodule.js"
+# import { createClient } from "./authclientmodule.js"
 import * as state from "./statemodule.js"
-import { info, error } from "./messageboxmodule.js"
-import * as osc from "./oscinterface.js"
 
 ############################################################
 masterClient = null
@@ -17,22 +15,22 @@ masterClient = null
 export initialize = ->
     log "initialize"
 
-    ## Master Functions
-    addClientButton.addEventListener("click", addClientButtonClicked)
-    removeClientButton.addEventListener("click", removeClientButtonClicked)
-    getClientsButton.addEventListener("click", getClientsButtonClicked)
+    # ## Master Functions
+    # addClientButton.addEventListener("click", addClientButtonClicked)
+    # removeClientButton.addEventListener("click", removeClientButtonClicked)
+    # getClientsButton.addEventListener("click", getClientsButtonClicked)
 
-    ## Chat Sites
-    addSiteButton.addEventListener("click", addSiteButtonClicked)
-    removeSiteButton.addEventListener("click", removeSiteButtonClicked)
-    getSitesButton.addEventListener("click", getSitesButtonClicked)
+    # ## Chat Sites
+    # addSiteButton.addEventListener("click", addSiteButtonClicked)
+    # removeSiteButton.addEventListener("click", removeSiteButtonClicked)
+    # getSitesButton.addEventListener("click", getSitesButtonClicked)
 
-    ## Client Setup
-    secretKeyHex = state.get("secretKeyHex")
-    serverURL = "https://localhost:6999"
-    o = {serverURL, secretKeyHex}
+    # ## Client Setup
+    # secretKeyHex = state.get("secretKeyHex")
+    # serverURL = "https://localhost:6999"
+    # o = {serverURL, secretKeyHex}
     
-    masterClient = createClient(o)
+    # masterClient = createClient(o)
     return
 
 ############################################################
