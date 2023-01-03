@@ -4,7 +4,10 @@ import { createLogFunctions } from "thingy-debug"
 {log, olog} = createLogFunctions("settingsmodule")
 #endregion
 
+############################################################
 settingsButton = document.getElementById("settings-button")
+settingsoffButton = document.getElementById("settingsoff-button")
+
 ############################################################
 currentlyShownSettingspage = null
 
@@ -15,12 +18,11 @@ export initialize = ->
     settingsoffButton.addEventListener("click", settingsoffButtonClicked)
     
     #specific settings
-    settingsbuttonAccount.addEventListener("click", settingsbuttonAccountClicked)
-    settingsbuttonSecretManager.addEventListener("click", settingsbuttonSecretManagerClicked)
-    settingsbuttonDataManager.addEventListener("click", settingsbuttonDataManagerClicked)
-
-    settingsbuttonSignallingserver.addEventListener("click", settingsbuttonSignallingserverClicked)    
-    settingsbuttonTurnserver.addEventListener("click", settingsbuttonTurnserverClicked)
+    settingsButtons = document.getElementsByClassName("settings-entry")
+    for b in settingsButtons
+        id = b.id.replace("settingsbutton-", "settingspage-")
+        fun = createShowSettingsFunctionFor(id)
+        b.addEventListener("click", fun)
     
     #Implement or Remove :-)
     backButtons = document.getElementsByClassName("settingspage-backbutton")
@@ -38,46 +40,12 @@ settingsoffButtonClicked = ->
     return
 
 ############################################################
-settingsbuttonAccountClicked = ->
-    # settingspageAccount.
-    currentlyShownSettingspage = settingspageAccount
+createShowSettingsFunctionFor = (id) ->
+    page = document.getElementById(id)
+    return () -> showSettingsPage(page)
+showSettingsPage = (page) ->
+    currentlyShownSettingspage = page
     currentlyShownSettingspage.classList.add("here")
-    # document.body.classList.add("away")
-    # mainframe.classList.add("zoomed-out")
-    return
-
-settingsbuttonSecretManagerClicked = ->
-    # settingspageSecretManager.
-    currentlyShownSettingspage = settingspageSecretManager
-    currentlyShownSettingspage.classList.add("here")
-    # document.body.classList.add("away")
-    # mainframe.classList.add("zoomed-out")
-    return
-
-settingsbuttonDataManagerClicked = ->
-    # settingspageDataManager.
-    currentlyShownSettingspage = settingspageDataManager
-    currentlyShownSettingspage.classList.add("here")
-    # document.body.classList.add("away")
-    # mainframe.classList.add("zoomed-out")
-    return
-
-    
-
-settingsbuttonSignallingserverClicked = ->
-    # settingspageSignallingserver.
-    currentlyShownSettingspage = settingspageSignallingserver
-    currentlyShownSettingspage.classList.add("here")
-    # document.body.classList.add("away")
-    # mainframe.classList.add("zoomed-out")
-    return
-
-settingsbuttonTurnserverClicked = ->
-    # settingspageTurnserver.
-    currentlyShownSettingspage = settingspageTurnserver
-    currentlyShownSettingspage.classList.add("here")
-    # document.body.classList.add("away")
-    # mainframe.classList.add("zoomed-out")
     return
 
 ############################################################

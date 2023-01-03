@@ -1,0 +1,9 @@
+include ../settingsmodule/setting-mixins.pug
+
++settings-group("Account Settings")
+    +settings-button("account", "Account", "#svg-account-icon")
+    +settings-button("secretmanager", "Secret Manager", "#svg-key-shield-icon")
+    +settings-button("datamanager", "Data Manager", "#svg-data-icon")
+
++settings-group("Backend Settings")    
+    +settings-button("backend", "Backend Server", "#svg-server-icon")
