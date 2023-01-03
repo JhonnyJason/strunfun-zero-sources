@@ -25,3 +25,6 @@
 [submodule "source/validatabletimestampmodule"]
 	path = source/validatabletimestampmodule
 	url = git@github.com:JhonnyJason/thingy-sources-validatabletimestampmodule.git
+[submodule "source/settingsmodule"]
+	path = source/settingsmodule
+	url = git@github.com:JhonnyJason/pwa-sources-intrusivesettingsmodule.git
