@@ -5,6 +5,7 @@ indexdomconnect.initialize = () ->
     global.content = document.getElementById("content")
     global.settingsButton = document.getElementById("settings-button")
     global.settingsoffButton = document.getElementById("settingsoff-button")
+    global.secretmanagerOptions = document.getElementById("secretmanager-options")
     global.accountsettings = document.getElementById("accountsettings")
     global.idDisplay = document.getElementById("id-display")
     global.idQrButton = document.getElementById("id-qr-button")

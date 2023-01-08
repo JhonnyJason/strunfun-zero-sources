@@ -1,23 +1,17 @@
-configmodule = {name: "configmodule", uimodule: false}
 ############################################################
-#region printLogFunctions
-log = (arg) ->
-    if allModules.debugmodule.modulesToDebug["configmodule"]?  then console.log "[configmodule]: " + arg
-    return
-ostr = (obj) -> JSON.stringify(obj, null, 4)
-olog = (obj) -> log "\n" + ostr(obj)
-print = (arg) -> console.log(arg)
-#endregion
+# Secret Manager
+export secretManagerOptions = [
+    "https://secrets.dotv.ee",
+    "https://secrets-dev.dotv.ee",
+    "https://secrets.extensivlyon.coffee"
+]
+export defaultSecretManagerChoice = 0
 
-########################################################
-configmodule.initialize = ->
-    log "configmodule.initialize"
-    return    
-
-########################################################
-#region exposedProperties
-configmodule.prop = true
-
-#endregion
-
-export default configmodule
+############################################################
+# StrunFun Backend
+export backendOptions = [
+    "https://strunfun-backend.dotv.ee",
+    "https://strunfun-backend.extensivlyon.coffee"
+    "https://localhost:6999"
+]
+export defaultBackendChoice = 2
