@@ -28,3 +28,6 @@
 [submodule "source/settingsmodule"]
 	path = source/settingsmodule
 	url = git@github.com:JhonnyJason/pwa-sources-intrusivesettingsmodule.git
+[submodule "source/preloadermodule"]
+	path = source/preloadermodule
+	url = git@github.com:JhonnyJason/pwa-sources-preloadermodule.git
